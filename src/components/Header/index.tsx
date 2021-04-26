@@ -2,8 +2,6 @@ import logoImg from "../../assets/logo.svg"
 
 import { Link } from 'react-router-dom';
 import { Container, Content } from "./styles"
-import { FiSearch } from "react-icons/fi"
-import Input from "../Input";
 
 export function Header() {
   return (
@@ -12,7 +10,6 @@ export function Header() {
         <Link to="/dashboard">
           <img src={logoImg} alt="e learning"/>
         </Link>
-        <Input name="search" icon={FiSearch} placeholder="Busque uma aula"/>
       </Content>
     </Container>
   )

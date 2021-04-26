@@ -49,5 +49,11 @@ export const TextArea = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
   }
 `;
