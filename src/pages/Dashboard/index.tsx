@@ -4,11 +4,18 @@ import { Header } from "../../components/Header";
 import { Container, CardArea, CardContent } from "./styles";
 
 import api from "../../services/api";
-import mathImg from "../../assets/math.svg";
 
 interface Course {
   id: string;
   name: string;
+  image_path:string;
+  lessons: Array<{
+    id: string;
+    name: string;
+    video_id: string;
+    duration: string;
+    description: string;
+  }>;
 }
 
 const Dashboard: React.FC = () => {
@@ -32,9 +39,13 @@ const Dashboard: React.FC = () => {
         {courses.map(course => (
           <Link key={course.id} to={`/lessons/${course.id}`}>
             <CardContent>
-              <img src={mathImg} alt=""/>
+              <img src={`http://localhost:3333/files/${course.image_path}`} alt=""/>
               <h2>{course.name}</h2>
-              <p>15 aulas</p>
+              { course.lessons.length === 1 || undefined ? (
+                <p>{String(course.lessons.length).padStart(2, '0')} aula</p>
+              ) : (
+                <p>{String(course.lessons.length).padStart(2, '0')} aulas</p>
+              ) }
             </CardContent>
           </Link>
         ))}

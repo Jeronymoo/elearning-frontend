@@ -52,12 +52,6 @@ export const LessonsList = styled.div`
       color: var(--text-tile);
     }
 
-    small {
-      display: inline-block;
-      color: var(--text-inputs);
-      margin: 1rem 0.5rem 0 0;
-    }
-
     & + button {
       margin-top: 1rem;
     }
@@ -65,6 +59,18 @@ export const LessonsList = styled.div`
     &:hover {
       background: #f7f2ff;
     }
+  }
+`;
+
+export const LessonDuration = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-inputs);
+  margin: 1rem 0.5rem 0 0;
+
+  svg {
+    margin: 0 0.2rem 0 0.8rem;
   }
 `;
 

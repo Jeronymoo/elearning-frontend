@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Header } from "../../components/Header";
-import { Container, Info, LessonsList, LessonArea } from "./styles";
+import { Container, Info, LessonsList, LessonArea, LessonDuration } from "./styles";
+import { FiClock } from 'react-icons/fi'
 
 import api from "../../services/api";
 
@@ -46,11 +47,14 @@ const Lessons: React.FC = () => {
     </Info>
     <Container>
       <LessonsList>
-        {lessons.map(lesson => (
+        {lessons.map((lesson, index) => (
           <button key={lesson.id} onClick={() => handleShowModal(lesson)}>
             <h1>{lesson.name}</h1>
-            <small>Aula 01</small>
-            <small>{lesson.duration}</small>
+            <LessonDuration>
+              <small>Aula {String(index + 1).padStart(2, '0')}</small>
+              <FiClock/>
+              <small>{lesson.duration}</small>
+            </LessonDuration>
         </button>
         ))}
       </LessonsList>
