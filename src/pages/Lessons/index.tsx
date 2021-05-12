@@ -28,7 +28,7 @@ const Lessons: React.FC = () => {
   const [object, setObject] = useState<IObject>({} as IObject);
 
   useEffect(() => {
-    api.get(`lessons/${id}/lessons`).then((response) => {
+    api.get(`courses/${id}/lessons`).then((response) => {
       setLessons(response.data);
     }); 
   }, [id]);
