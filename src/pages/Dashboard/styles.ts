@@ -31,11 +31,6 @@ export const CardArea = styled.div`
     margin-top: 3rem;
     transition: background 0.2s;
 
-
-    /* & + a {
-      margin-left: 2rem;
-    } */
-
     &:hover {
       background: #f7f2ff;
     }
@@ -60,6 +55,7 @@ export const CardContent = styled.div`
   img {
     margin: 1.5rem 0 0 1rem;
     width: 100px;
+    height: 100px;
   }
 `;
 

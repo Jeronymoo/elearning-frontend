@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import Bg from '../../assets/bg.svg';
+import Bg from '../../assets/elogo.svg';
 
 export const Container = styled.div`
   height: 100vh;
